@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WASZKA-SECURITY</title>
+    <style>
+        /* Globalne style */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #2d3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        h2, h3 {
+            font-size: 1.6rem;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .tables {
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .table-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        td {
+            font-size: 1rem;
+            color: #2c3e50; /* Zmieniamy kolor tekstu na ciemniejszy */
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: #3498db;
+            transition: color 0.3s;
+        }
+
+        .copy-btn:hover {
+            color: #2980b9;
+        }
+
+        .instructions {
+            background-color: #ecf0f1;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .instructions h3 {
+            font-size: 1.6rem;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+
+        .instructions ol {
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        /* Animacje i efekty */
+        table {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        table:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tables {
+                padding: 0 10px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            .copy-btn {
+                font-size: 18px;
+            }
+
+            .instructions {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>WASZKA-SECURITY</h1>
+    </header>
+
+    <section class="tables">
+        <div class="table-container">
+            <h2>PRZEBIEG ZMIANY</h2>
+            <table id="table-przebieg">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Godzina</th>
+                        <th>Opis zdarzenia</th>
+                        <th>Rodzaj zdarzenia</th>
+                        <th>Podjęte działania</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+                        <td id="cell-1">2026-03-05
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-2">07:00
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-3">ROZPOCZĘCIE ZMIANY
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-4">INNE
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-5">WYDANIE KLUCZY
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="cell-6">2026-03-05
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-7">07:15
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-8">KOLORYT - FIRMA SPRZĄTAJĄCA
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-9">INNE
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-10">WYDANIE KLUCZY
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="cell-11">2026-03-05
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-12">08:01
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-13">ODBICIE PUNKTU W BIURZE OCHRONY
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-14">WYKONANIE OBCHODÓW ZGZ Z ZALECENIAMI
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-15">WYDANIE KLUCZY
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="cell-16">2026-03-05
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-17">20:01
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-18">PRZYJĘCIE KLUCZY
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-19">INNE
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-20">OBCHÓD OBIEKTU
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="cell-21">2026-03-06
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-22">22:07
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-23">PRZYJĘCIE KLUCZY
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-24">INNE
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                        <td id="cell-25">-
+                            <button class="copy-btn">⎘</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="instructions">
+        <h3>Instrukcje tworzenia raportu:</h3>
+        <ol>
+            <li><strong>Obsada obiektu:</strong> Określ, kto pełnił służbę w danym dniu. Podaj godziny pracy i zakres obowiązków dla każdego agenta ochrony.</li>
+            <li><strong>Przebieg zmiany:</strong> Zapisuj każde zdarzenie, które miało miejsce w trakcie zmiany. Używaj dokładnych godzin oraz opisz, co się wydarzyło, jakiego rodzaju było to zdarzenie oraz jakie działania podjęto w odpowiedzi.</li>
+            <li><strong>Wyposażenie ochrony:</strong> Zapisz szczegóły na temat wykorzystywanego sprzętu, np. latarki, apteczki, laptopów, itp. Zaznacz, czy wszystko było sprawne i potwierdzone przez odpowiednie osoby.</li>
+        </ol>
+        <h3>Raportowanie:</h3>
+        <ol>
+            <li>Wejdź na zakładkę RAPORTY</li>
+            <li>Wybierz "Raport dobowy"</li>
+            <li>Sprawdź dane, a następnie kliknij "Generuj" raport.</li>
+            <li>Na końcu kliknij przycisk wyślij raport</li>
+        </ol>
+    </section>
+
+    <script>
+        // Funkcja kopiująca tekst z komórki do schowka
+        document.addEventListener("DOMContentLoaded", function () {
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const text = this.parentElement.innerText.replace("⎘", "").trim();
+                    const textarea = document.createElement('textarea');
+                    textarea.value = text;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    alert(`Skopiowano: ${text}`);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
